@@ -81,7 +81,7 @@ The CommandBar Editor is how you can add commands to your Bar. Usually, the Edit
 from your Bar in-situ on your site; however, for Mobile SDK integrations this won't work.
 
 Instead, you can use the Editor via this link:
-  [https://mobile.commandbar.com/?org=<your-org-id>&editor=true](https://mobile.commandbar.com/?org=<your-org-id>&editor=true)
+  [https://mobile.commandbar.com/?org=your-org-id&editor=true](https://mobile.commandbar.com/?org=your-org-id&editor=true)
 
 You can learn more about the Editor here:
   https://www.commandbar.com/docs/getting-started/open-editor
