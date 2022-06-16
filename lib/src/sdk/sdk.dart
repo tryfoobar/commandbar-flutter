@@ -12,10 +12,6 @@ class InstanceAttributes {
       };
 }
 
-typedef CallbackArguments = Map<String, Object?>;
-typedef Context = Map<String, Object?>;
-typedef Callback = Function(CallbackArguments args, Context context);
-
 typedef RouterFn = Function(String url);
 
 class CommandBarInstance {
@@ -35,7 +31,10 @@ abstract class CommandBarSDK {
 
   Future<void> addRouter(RouterFn myRouter);
 
-  Future<void> addCallback(String callbackKey, Callback callback);
+  Future<void> addCallback(
+      String callbackKey,
+      Function(Map<String, Object?> args, Map<String, Object?> context)
+          callback);
   Future<void> removeCallback(String callbackKey);
 
   Future<void> addCommand(Command command);

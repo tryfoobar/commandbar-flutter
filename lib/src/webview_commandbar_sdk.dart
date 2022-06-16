@@ -8,16 +8,11 @@ import 'callback_message.dart';
 import 'sdk/command.dart';
 import 'sdk/sdk.dart';
 
-typedef CallbackMap = Map<String, Function>;
-typedef CommandMap = Map<String, Command>;
-
 class JavascriptExpressionLiteral {
   String js;
 
   JavascriptExpressionLiteral(this.js);
 }
-
-typedef RecordCallbackActionMap = Map<String, Command>;
 
 class WebViewCommandBarSDK extends CommandBarSDK {
   final log = Logger('WebViewCommandBarSDK');
@@ -25,10 +20,10 @@ class WebViewCommandBarSDK extends CommandBarSDK {
   final Future<WebViewController> cbWebViewController;
   final PanelController cbPanelController;
 
-  CallbackMap callbackMap = {};
-  CommandMap commandMap = {};
+  Map<String, Function> callbackMap = {};
+  Map<String, Command> commandMap = {};
   RouterFn? router;
-  RecordCallbackActionMap recordsActionMap = {};
+  Map<String, Command> recordsActionMap = {};
 
   WebViewCommandBarSDK(this.cbWebViewController, this.cbPanelController);
 
@@ -75,7 +70,10 @@ class WebViewCommandBarSDK extends CommandBarSDK {
       ]);
 
   @override
-  Future<void> addCallback(String callbackKey, Callback callback) async {
+  Future<void> addCallback(
+      String callbackKey,
+      Function(Map<String, Object?> args, Map<String, Object?> context)
+          callback) async {
     await _call('addCallback', [
       callbackKey,
       JavascriptExpressionLiteral('''
@@ -100,8 +98,7 @@ class WebViewCommandBarSDK extends CommandBarSDK {
     callbackMap.remove(callbackKey);
   }
 
-  void runCallback(
-      String callbackKey, CallbackArguments args, Context context) {
+  void runCallback(String callbackKey, dynamic args, dynamic context) {
     if (callbackMap.containsKey(callbackKey)) {
       var callback = callbackMap[callbackKey];
 
