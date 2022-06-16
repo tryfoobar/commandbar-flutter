@@ -1,7 +1,8 @@
 name: commandbar
-description: CommandBar gives your users onboarding nudges, quick actions, relevant support content, and powerful search, in one ‍personalized, blazing fast widget.
-version: 0.1.2
+description: CommandBar gives your users onboarding nudges, quick actions, relevant support content, and powerful search, in one personalized, blazing fast widget.
+version: 0.1.3
 homepage: https://commandbar.com/
+repository: http://github.com/tryfoobar/commandbar-flutter/
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
