@@ -1,3 +1,10 @@
+## 0.1.4
+
+* fix: remove boilerplate from commandbar.dart
+* docs: add "Opening the bar" section to README
+* build: allow use of older Dart versions
+* build: use "https" for repo link
+
 ## 0.1.3
 
 * build: add 'repository' link to package metadata
