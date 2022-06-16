@@ -1,3 +1,7 @@
+## 0.1.2
+
+* feat: add COMMANDBAR_DEV environment variable to enable internal-only dev mode
+
 ## 0.1.1
 
 * docs: fix editor link in README.md 

@@ -65,9 +65,9 @@ class CommandBarWidget extends StatelessWidget {
     // Mediaquery helps us get the available screen size after the
     // appbar has been calculated.
     final size = MediaQuery.of(context).size;
-    final webviewUrl = foundation.kReleaseMode
-        ? 'https://mobile.commandbar.com/?org=${Uri.encodeComponent(orgId)}'
-        : 'http://localhost:3004/?org=${Uri.encodeComponent(orgId)}&lc=local';
+    final webviewUrl = const bool.hasEnvironment("COMMANDBAR_DEV")
+        ? 'http://localhost:3004/?org=${Uri.encodeComponent(orgId)}&lc=local'
+        : 'https://mobile.commandbar.com/?org=${Uri.encodeComponent(orgId)}';
 
     final webview = WebView(
       gestureRecognizers: gestureRecognizers,
