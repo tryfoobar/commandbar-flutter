@@ -1,3 +1,8 @@
+## 0.1.5
+
+* lint: fix some linter warnings
+* fix: compilation error "nonfunction-type-aliases"
+
 ## 0.1.4
 
 * fix: remove boilerplate from commandbar.dart
