@@ -75,6 +75,51 @@ The call to `commandBar.boot` is optional; if included, you can provide the user
 metadata. If you do this, analytics events will be tagged with the user's ID. (see 
 https://www.commandbar.com/sdk#boot for more details).
 
+### Opening the bar
+
+Finally, we need to open the Bar by calling `commandBar.toggle()`.
+
+#### Using a button
+
+```dart
+class LauncherButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final cbInstance = Provider.of<CommandBarInstance>(context);
+    
+    return IconButton(
+        icon: Icon(
+          Icons.bolt,
+        ),
+        onPressed: () {
+          cbInstance.commandBar.toggle();
+        },
+    );
+  }
+}
+```
+
+#### Using a gesture
+
+```dart
+class LauncherGesture extends StatelessWidget {
+  final Widget? child;
+  LauncherGesture({this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    final commandBar = Provider.of<CommandBarSDK>(context);
+
+    return GestureDetector(
+      onDoubleTap: () {
+        commandBar.toggle();
+      },
+      child: child,
+    );
+  }
+}
+```
+
 ## Using the Editor
 
 The CommandBar Editor is how you can add commands to your Bar. Usually, the Editor can be used directly 
