@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/tryfoobar/commandbar-flutter/main/resources/logo.svg" width="400" />
+
 CommandBar gives your users onboarding nudges, quick actions, relevant support content, and 
 powerful search, in one ‍personalized, blazing fast widget.
 
