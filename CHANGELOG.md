@@ -1,3 +1,7 @@
+## 0.1.6
+
+* docs: add logo to README
+
 ## 0.1.5
 
 * lint: fix some linter warnings
