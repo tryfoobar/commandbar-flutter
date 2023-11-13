@@ -1,3 +1,6 @@
+⚠️ Warning ⚠️
+This repository is deprecated and is no longer actively maintained or supported. We do not plan to make any further changes or updates to this repository.
+
 <img src="https://raw.githubusercontent.com/tryfoobar/commandbar-flutter/main/resources/logo.svg" width="400" />
 
 CommandBar gives your users onboarding nudges, quick actions, relevant support content, and 
